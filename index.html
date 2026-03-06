@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI DND</title>
+
+<style>
+
+body{
+background:#111;
+color:#eee;
+font-family:serif;
+padding:20px;
+}
+
+#log{
+height:300px;
+overflow:auto;
+border:1px solid #444;
+padding:10px;
+margin-bottom:10px;
+}
+
+input{
+width:70%;
+}
+
+button{
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>AI DND</h2>
+
+<div id="log"></div>
+
+<input id="action" placeholder="what do you do">
+
+<button onclick="act()">Act</button>
+<button onclick="roll()">Roll d20</button>
+
+<script>
+
+let log=document.getElementById("log")
+
+function write(t){
+log.innerHTML+="<p>"+t+"</p>"
+log.scrollTop=log.scrollHeight
+}
+
+function roll(){
+
+let r=Math.floor(Math.random()*20)+1
+
+write("🎲 roll d20: "+r)
+
+}
+
+function act(){
+
+let action=document.getElementById("action").value
+
+write("You: "+action)
+
+write("DM: The dark world reacts to your action...")
+
+}
+
+</script>
+
+</body>
+</html>
